@@ -3,6 +3,7 @@
   flex-direction: column;
   flex-shrink: 0;
   width: -webkit-fill-available;
+  margin: 1rem 2rem;
 }
 .inputBlock {
   display: flex;
@@ -15,9 +16,6 @@
   width: 97%;
   color: white;
   background-color: #40444b;
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 19px;
   outline: none;

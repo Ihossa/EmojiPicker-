@@ -27,11 +27,11 @@ const Input = () => {
     
     
   
-    if(inputValue.match(reg)){  
-      console.log(inputValue.match(reg))
+    if(inputValue.match(reg)){ 
+       
         let emoji = emojiesText.indexOf(inputValue.match(reg)[inputValue.match(reg).length-1]);
         let value = inputValue.replace(inputValue.match(reg)[inputValue.match(reg).length-1], emojies[emoji])
-        console.log(emoji, value)
+
         if(emoji !== -1){
           setValueInput(value);
         } else {

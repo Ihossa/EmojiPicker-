@@ -1,30 +1,30 @@
-import React from "react";
-import { useState } from 'react';
+import React, {useState, useMemo} from "react";
 
 import style from './ToolType.module.scss'
 
 const emojies = require('emojis-list')
 const emojiesText = require('emojis-keywords');
 
-const getEmoji = () => {
-  let arrEmoji = [];
-  for(let i = 1749; i < 1800; i++) {
-    let emojiObj = {
-      id: i,
-      emojies: emojies[i],
-      emojiesText: emojiesText[i]
-    };
-    arrEmoji.push(emojiObj)
-  };
-  return arrEmoji;
-};
 
 const ToolType = ({setValueInput}) => {
-  const arr = getEmoji();
-  const [emojiArr, setEmoji] = useState(arr);
+
   const [emojiHover, setEmojiHover] = useState("");
 
+  const emojiArr = useMemo(() => {
+    let arrEmoji = [];
+    
+    for(let i = 1749; i < 1800; i++) {
+      let emojiObj = {
+        id: i,
+        emojies: emojies[i],
+        emojiesText: emojiesText[i]
+      };
+      arrEmoji.push(emojiObj)
+    };
   
+    return arrEmoji;
+  }, []);
+
  
   const onMouseEnterHandler = (el) => {
     setEmojiHover(el.target.id)
@@ -40,7 +40,7 @@ const ToolType = ({setValueInput}) => {
           <div className = {style.emoji}>
             {emojiArr.map((emoji, index) => {
               return ( <div 
-                key = {`${index}${emoji}`}
+                key = {`${index}_${emoji}`}
                 id = {emoji.id}
                 className = {style.smile}
                 onMouseEnter = {onMouseEnterHandler}

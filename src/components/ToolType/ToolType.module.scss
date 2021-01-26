@@ -4,6 +4,10 @@
   border: 2.03613px solid #202225;
   box-sizing: border-box;
   border-radius: 4px;
+  @media screen and (max-width: 700px) {
+    height: 40%;
+    width: 70%;
+  }
 }
 .header {
   margin: 23px 16px;
