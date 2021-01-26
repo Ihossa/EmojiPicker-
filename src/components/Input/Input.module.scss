@@ -1,0 +1,29 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: -webkit-fill-available;
+}
+.inputBlock {
+  display: flex;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: #40444b;
+  padding: 10px;
+}
+.inputText {
+  width: 97%;
+  color: white;
+  background-color: #40444b;
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  outline: none;
+  border: none;
+}
+.inputEmoji {
+  padding: 0 10px;
+  cursor: pointer;
+}
